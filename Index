@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Propose Day ❤️</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(#ff6a88, #ff99ac);
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+h1 { font-size: 40px; }
+p { font-size: 20px; }
+
+button {
+  background: white;
+  color: #ff4b6e;
+  border: none;
+  padding: 15px 35px;
+  font-size: 20px;
+  margin: 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ffe6ec;
+  transform: scale(1.1);
+}
+
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+<h1>Aachuu ❤️</h1>
+<p>
+Jab se tum meri zindagi mein aayi ho,<br>
+har din aur bhi khoobsurat ho gaya hai 💫<br><br>
+Iss Propose Day par main tumse phir se poochna chahta hoon…
+</p>
+
+<h2>Will you be my forever? 💍</h2>
+
+<button onclick="nextPage()">YES</button>
+<button onclick="nextPage()">ALWAYS YES</button>
+
+<script>
+function nextPage() {
+  window.location.href = "love.html";
+}
+
+// Create floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (20 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
+</script>
+</body>
+</html>
